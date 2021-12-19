@@ -10,14 +10,9 @@ ConfigurationManager configuration = builder.Configuration;
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(
-        configuration["ConnectionStrings:AzureStorage"],
+        configuration["ConnectionStrings:AzureSqlServer"],
         b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
-builder.Services.Configure<CookiePolicyOptions>(options =>
-{
-    options.CheckConsentNeeded = context => true;
-    options.MinimumSameSitePolicy = SameSiteMode.None;
-});
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddMvc(option => option.EnableEndpointRouting = false);
 
@@ -32,7 +27,6 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-app.UseCookiePolicy();
 
 app.UseRouting();
 app.UseAuthorization();

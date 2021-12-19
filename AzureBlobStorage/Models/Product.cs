@@ -19,8 +19,7 @@ namespace AzureBlobStorage.Models
 
         [Required(ErrorMessage = "Please Enter Description")]
         public string Description { get; set; }
-        public string ImageName { get; set; }
-        public string ImagePath { get; set; }
+
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
 

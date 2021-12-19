@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AzureBlobStorage.Controllers
 {
-    public class ProductsController : Controller
+    public class FilesController : Controller
     {
         private UnitOfWork _context;
         private ApplicationDbContext _applicationDbContext;
@@ -14,7 +14,7 @@ namespace AzureBlobStorage.Controllers
 
         private readonly IWebHostEnvironment _env;
 
-        public ProductsController(IWebHostEnvironment env, ApplicationDbContext applicationDbContext, IConfiguration configuration)
+        public FilesController(IWebHostEnvironment env, ApplicationDbContext applicationDbContext, IConfiguration configuration)
         {
             _applicationDbContext = applicationDbContext;
             _configuration = configuration;

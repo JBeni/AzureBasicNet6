@@ -11,12 +11,12 @@ namespace AzureBlobStorage.Database.Configurations
             builder.ToTable("Products");
 
             builder.HasKey(t => t.ProductId);
-            builder.Property(t => t.ImageName)
-                .HasMaxLength(100)
-                .IsRequired();
-            builder.Property(t => t.ImagePath)
-                .HasMaxLength(250)
-                .IsRequired();
+            //builder.Property(t => t.ImageName)
+            //    .HasMaxLength(100);
+                //.IsRequired();
+            //builder.Property(t => t.ImagePath)
+            //    .HasMaxLength(250);
+                //.IsRequired();
             builder.Property(t => t.Description)
                 .HasMaxLength(500)
                 .IsRequired();

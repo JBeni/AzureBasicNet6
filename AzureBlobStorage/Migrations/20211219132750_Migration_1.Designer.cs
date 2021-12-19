@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace AzureBlobStorage.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20211218212424_Migration_1")]
+    [Migration("20211219132750_Migration_1")]
     partial class Migration_1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

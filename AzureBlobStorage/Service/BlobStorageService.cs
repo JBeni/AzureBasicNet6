@@ -11,7 +11,7 @@ namespace AzureBlobStorage.Service
         public BlobStorageService(IConfiguration configuration)
         {
             _configuration = configuration;
-            accessKey = _configuration["ConnectionStrings:AzureStorage"];
+            accessKey = _configuration["ConnectionStrings:AzureBlobStorage"];
         }
 
         public string UploadFileToBlob(string strFileName, byte[] fileData, string fileMimeType)
