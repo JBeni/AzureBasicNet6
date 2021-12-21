@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureBasicNet6", "AzureBasicNet6\AzureBasicNet6.csproj", "{B6700543-7F3A-45A4-A421-133B868BA41A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Folder", "Solution Folder", "{71717111-AED5-4DE5-9146-8BC11A5BCCE5}"
+	ProjectSection(SolutionItems) = preProject
+		.gitattributes = .gitattributes
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B6700543-7F3A-45A4-A421-133B868BA41A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B6700543-7F3A-45A4-A421-133B868BA41A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B6700543-7F3A-45A4-A421-133B868BA41A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B6700543-7F3A-45A4-A421-133B868BA41A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A7C6974E-8FF2-4A85-B52E-02E18848272F}
+	EndGlobalSection
+EndGlobal
