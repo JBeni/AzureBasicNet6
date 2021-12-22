@@ -50,8 +50,8 @@
                 @Html.DisplayFor(modelItem => item.UpdatedDate)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.ProductId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.ProductId">Details</a> |
+                <a asp-action="Update" asp-route-id="@item.ProductId">Update</a> |
+                <a asp-action="View" asp-route-id="@item.ProductId">View</a> |
                 <a asp-action="Delete" asp-route-id="@item.ProductId">Delete</a>
             </td>
         </tr>
