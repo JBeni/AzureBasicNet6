@@ -1,10 +1,10 @@
 ﻿@model AzureBasicNet6.Models.Product
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "View";
 }
 
-<h2>Details</h2>
+<h2>View</h2>
 
 <div>
     <h4>Product</h4>
@@ -43,5 +43,6 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model.ProductId">Edit</a> |
+    <a asp-action="Update" asp-route-id="@Model.ProductId">Update</a> |
+    @Html.ActionLink("Go Back","Index","Products")
 </div>
