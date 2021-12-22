@@ -28,8 +28,8 @@ namespace AzureBasicNet6.Controllers
             return View(_context.ProductRepo.GetAll());
         }
 
-        // GET: Products/Details/5
-        public IActionResult Details(int? id)
+        // GET: Products/View/5
+        public IActionResult View(int? id)
         {
             if (id == null)
             {
@@ -90,8 +90,8 @@ namespace AzureBasicNet6.Controllers
             return View(product);
         }
 
-        // GET: Products/Edit/5
-        public IActionResult Edit(int? id)
+        // GET: Products/Update/5
+        public IActionResult Update(int? id)
         {
             if (id == null)
             {
@@ -106,12 +106,12 @@ namespace AzureBasicNet6.Controllers
             return View(product);
         }
 
-        // POST: Products/Edit/5
+        // POST: Products/Update/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,UnitPrice,Description,ImageName,ImagePath,CreatedDate,UpdatedDate")] Product product)
+        public async Task<IActionResult> Update(int id, [Bind("ProductId,Name,UnitPrice,Description,ImageName,ImagePath,CreatedDate,UpdatedDate")] Product product)
         {
             if (id != product.ProductId)
             {
