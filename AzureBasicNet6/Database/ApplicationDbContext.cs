@@ -1,6 +1,5 @@
 ﻿using AzureBasicNet6.Database.Configurations;
 using AzureBasicNet6.Models;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System.Reflection;
 
