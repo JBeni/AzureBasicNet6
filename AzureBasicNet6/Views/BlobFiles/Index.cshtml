@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AzureBasicNet6.Models.BlobFile>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Blob Files</h2>
+
+<p>
+    <a asp-action="Upload">Upload File</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FileUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedDate)
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FileUrl)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CreatedDate)
+                </td>
+                <td>
+                    @Html.ActionLink(
+                        "Download", 
+                        "download", 
+                        "BlobFiles", 
+                        new { fileUrl = @item.FileUrl }, 
+                        null
+                    )
+                    @Html.ActionLink(
+                        "Remove", 
+                        "Remove", 
+                        "BlobFiles", 
+                        new { fileUrl = @item.FileUrl }, 
+                        null
+                    )
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
