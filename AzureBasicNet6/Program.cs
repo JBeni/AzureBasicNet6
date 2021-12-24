@@ -20,16 +20,16 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 
 builder.Services.Configure<CookiePolicyOptions>(options =>
 {
-    // This lambda determines whether user consent for non-essential cookies is needed for a given request.
     options.CheckConsentNeeded = context => true;
     options.MinimumSameSitePolicy = SameSiteMode.Unspecified;
-    // Handling SameSite cookie according to https://docs.microsoft.com/en-us/aspnet/core/security/samesite?view=aspnetcore-3.1
     options.HandleSameSiteCookieCompatibility();
 });
 
+string[]? initialScopes = builder.Configuration.GetValue<string>("DownstreamApi:Scopes")?.Split(' ');
+
 //Sign-in users with the Microsoft identity platform
 builder.Services.AddAuthentication(OpenIdConnectDefaults.AuthenticationScheme)
-.AddMicrosoftIdentityWebApp(options => builder.Configuration.Bind("AzureAd", options));
+    .AddMicrosoftIdentityWebApp(options => builder.Configuration.Bind("AzureAd", options));
 
 builder.Services.AddControllersWithViews(options =>
 {
@@ -40,6 +40,9 @@ builder.Services.AddControllersWithViews(options =>
 }).AddMicrosoftIdentityUI();
 
 builder.Services.AddRazorPages();
+// Add the UI support to handle claims challenges
+builder.Services.AddServerSideBlazor().AddMicrosoftIdentityConsentHandler();
+
 builder.Services.AddTransient<IUnitOfWork, UnitOfWork>();
 builder.Services.AddMvc(option => option.EnableEndpointRouting = false);
 
