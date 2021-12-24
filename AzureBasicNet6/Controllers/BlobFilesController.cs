@@ -8,14 +8,14 @@ namespace AzureBasicNet6.Controllers
     public class BlobFilesController : Controller
     {
         private readonly IConfiguration _configuration;
-        private readonly BlobStorageService _blobService;
+        private readonly NewBlobStorageService _blobService;
         private readonly IWebHostEnvironment _env;
 
         public BlobFilesController(IWebHostEnvironment env, IConfiguration configuration)
         {
             _configuration = configuration;
             _env = env;
-            _blobService = new BlobStorageService(_configuration, _env);
+            _blobService = new NewBlobStorageService(_configuration, _env);
         }
 
         public async Task<IActionResult> Index()
@@ -51,8 +51,7 @@ namespace AzureBasicNet6.Controllers
                 string mimeType = blobFile.File.ContentType;
                 byte[] fileData = new byte[blobFile.File.Length];
 
-                _blobService.UploadFileToBlob(blobFile.File.FileName, fileData, mimeType);
-
+                await _blobService.UploadFileToBlobAsync(blobFile.File.FileName, fileData, mimeType);
                 return RedirectToAction(nameof(Index));
             }
             return View(blobFile);
